@@ -77,10 +77,10 @@ links = []
 for node in parsed_html.findAll('a'):
     if (len(''.join(node.findAll(text=True))) > 0 and
         len(''.join(node.findAll(text=True))) > 6 and
-            (''.join(node.findAll(text=True)).startswith('Subnet') or
-             ''.join(node.findAll(text=True)).startswith('AU_WiFi') or
-             ''.join(node.findAll(text=True)).startswith('MED') or
-             ''.join(node.findAll(text=True)).startswith('TWR'))):
+            (''.join(node.findAll(text=True)).startswith('Su') or # These are the first 2 letters of the links, used to filter main list to sublist you may need
+             ''.join(node.findAll(text=True)).startswith('AU') or # as well as filter out the actual links from other links on the page
+             ''.join(node.findAll(text=True)).startswith('ME') or
+             ''.join(node.findAll(text=True)).startswith('TW'))):
         links.append(node['href'])
 
 with open('report.csv', 'wb') as f:
