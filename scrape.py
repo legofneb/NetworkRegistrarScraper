@@ -1,3 +1,11 @@
+#! /usr/bin/env python3
+
+import sys
+if not str(sys.version[:5]).startswith("3"):
+    print("You must use python3 to use this script")
+    exit()
+
+# TODO: correct imports to fit python style guidelines
 import http.cookiejar
 import os
 import urllib
